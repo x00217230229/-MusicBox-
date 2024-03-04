@@ -2,7 +2,7 @@
 //  main.c
 //  k.c
 //
-//  Created by 宋国伟 on 2024/1/9.
+//  Created by  on 2024/1/9.
 //
 
 #include <stdio.h>
