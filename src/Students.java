@@ -1,4 +1,6 @@
 
+import java.util.Scanner;  
+
     public class Students{  
         private String studentId;  
         private String name;  
@@ -41,4 +43,37 @@
             this.extraActivities = extraActivities;  
         }  
       
+          
+        public static void main(String[] args) {  
+            Scanner scanner = new Scanner(System.in);  
+            System.out.println("please input student's number:");  
+            int numberOfStudents = scanner.nextInt();  
+      
+             
+            Students[] students = new Students[numberOfStudents];  
+      
+            for (int i = 0; i < numberOfStudents; i++) {  
+                System.out.println("please input " + (i + 1) + " student's ID:");  
+                String studentId = scanner.next();  
+      
+                System.out.println("please input " + (i + 1) + " student's name:");  
+                String name = scanner.next();  
+      
+                System.out.println("please input " + (i + 1) + " actional number:");  
+                int extraActivities = scanner.nextInt();  
+      
+                 
+                students[i] = new Students(studentId, name, extraActivities);  
+            }  
+      
+             
+            for (Students student : students) {  
+                System.out.println("student's number: " + student.getStudentId());  
+                System.out.println("student's name: " + student.getName());  
+                System.out.println("actinal number: " + student.getExtraActivities());  
+                System.out.println();  
+            }  
+      
+            scanner.close();  
+        }  
     }
