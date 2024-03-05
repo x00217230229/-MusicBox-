@@ -6,7 +6,7 @@
         private String name;  
         private int extraActivities;  
       
-        // 构造函数  
+     
         public Students(String studentId, String name, int extraActivities) {  
             this.studentId = studentId;  
             this.name = name;  
@@ -43,34 +43,34 @@
             this.extraActivities = extraActivities;  
         }  
       
-        // 用于获取用户输入并创建学生对象的工具方法  
+          
         public static void main(String[] args) {  
             Scanner scanner = new Scanner(System.in);  
-            System.out.println("请输入学生数量:");  
+            System.out.println("please input student's number:");  
             int numberOfStudents = scanner.nextInt();  
       
-            // 创建一个学生数组来存储所有学生信息  
+             
             Students[] students = new Students[numberOfStudents];  
       
             for (int i = 0; i < numberOfStudents; i++) {  
-                System.out.println("请输入第 " + (i + 1) + " 个学生的ID:");  
+                System.out.println("please input " + (i + 1) + " student's ID:");  
                 String studentId = scanner.next();  
       
-                System.out.println("请输入第 " + (i + 1) + " 个学生的名字:");  
+                System.out.println("please input " + (i + 1) + " student's name:");  
                 String name = scanner.next();  
       
-                System.out.println("请输入第 " + (i + 1) + " 个学生参与的额外活动数量:");  
+                System.out.println("please input " + (i + 1) + " actional number:");  
                 int extraActivities = scanner.nextInt();  
       
-                // 创建学生对象并添加到数组中  
+                 
                 students[i] = new Students(studentId, name, extraActivities);  
             }  
       
-            // 打印所有学生信息  
+             
             for (Students student : students) {  
-                System.out.println("学生ID: " + student.getStudentId());  
-                System.out.println("学生名字: " + student.getName());  
-                System.out.println("额外活动数量: " + student.getExtraActivities());  
+                System.out.println("student's number: " + student.getStudentId());  
+                System.out.println("student's name: " + student.getName());  
+                System.out.println("actinal number: " + student.getExtraActivities());  
                 System.out.println();  
             }  
       
