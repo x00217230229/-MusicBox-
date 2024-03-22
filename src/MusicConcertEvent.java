@@ -3,11 +3,11 @@ public class MusicConcertEvent {
         //TODO Auto-generated constructor stub
     }
 
-    public class MusicConcertEvent {  
+    public class MusicConcertevent {  
         private boolean merchandiseRequired;  
         private double merchandiseCost;  
       
-        public MusicConcertEvent(boolean merchandiseRequired, double merchandiseCost) {  
+        public void MusicConcertEvent(boolean merchandiseRequired, double merchandiseCost) {  
             this.merchandiseRequired = merchandiseRequired;  
             this.merchandiseCost = merchandiseCost;  
         }  
