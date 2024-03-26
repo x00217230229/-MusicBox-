@@ -1,37 +1,36 @@
-public class MusicConcertEvent {
-    public MusicConcertEvent(boolean b, double d) {
-        //TODO Auto-generated constructor stub
+public class MusicConcertEvent{
+    private String eventID;
+    private String eventName;
+    private String eventLocation;
+    private String eventPointOfContact;
+    private double eventCost;
+    private int totalParticipants;
+    private int totalEventDays;
+    private boolean merchandiseRequired;
+    private double merchandiseCost;
+    private CalculateEventCostClass calculateEventCostObject=new CalculateEventCostClass();
+
+    public MusicConcertEvent(String eventID, String eventName, String eventLocation, String eventPointOfContact, double eventCost, int totalParticipants,int totalEventDays, boolean merchandiseRequired, double merchandiseCost) {
+        this.eventID = eventID;
+        this.eventName = eventName;
+        this.eventLocation = eventLocation;
+        this.eventPointOfContact = eventPointOfContact;
+        this.eventCost = eventCost;
+        this.totalParticipants = totalParticipants;
+        this.totalEventDays = totalEventDays;
+        this.merchandiseRequired = merchandiseRequired;
+        this.merchandiseCost = merchandiseCost;
     }
 
-    public class MusicConcertevent {  
-        private boolean merchandiseRequired;  
-        private double merchandiseCost;  
-      
-        public void MusicConcertEvent(boolean merchandiseRequired, double merchandiseCost) {  
-            this.merchandiseRequired = merchandiseRequired;  
-            this.merchandiseCost = merchandiseCost;  
-        }  
-      
-        public double calculateEventCost() {  
-            double eventCost = 0.0;  
-            if (merchandiseRequired) {  
-                eventCost += merchandiseCost;  
-            }  
-            // Here you can add other costs related to the event, such as venue rental, artist fees, etc.  
-            // For simplicity, we're assuming the merchandise cost is the only cost for now.  
-            return eventCost;  
-        }  
-      
-        @Override  
-        public String toString() {  
-            return "Music Concert Event Details:\n" +  
-                    "Merchandise Required: " + merchandiseRequired + "\n" +  
-                    "Merchandise Cost: $" + merchandiseCost;  
-        }  
+    public double calculateEventCost(){
+        return eventCost = calculateEventCostObject.calculateEventCost() + (calculateEventCostObject.calculateEventCost() * 0.3);
     }
-
-    public double calculateEventCost() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calculateEventCost'");
+    public String toString() {
+      return "Music Concert Event details:"+'\n'+
+              "Event ID: "+eventID+'\n'+
+              "Event Name: "+eventName+'\n'+
+              "Event Location: "+eventLocation+'\n'+
+              "Total Participants: "+totalParticipants+'\n'+
+              "Total Event Cost:"+calculateEventCost()+'\n';
     }
 }

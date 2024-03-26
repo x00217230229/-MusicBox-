@@ -15,7 +15,7 @@ private int totalEventdays;
 
 
 public  event(String eventID,String eventName,String eventLocation,String pointofContact,
-double eventCost,int totalParticipants){
+double eventCost,int totalParticipants,int totalEventdays){
  this.eventID = eventID;
  this. eventName= eventName;
  this. eventLocation=eventLocation ;

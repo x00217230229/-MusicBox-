@@ -1,64 +1,47 @@
-public class ConferenceEvent extends event{
+import com.sun.java.accessibility.util.EventID;
+
+public class ConferenceEvent{
+    private String eventID;
+    private String eventName;
+    private String eventLocation;
+    private String eventPointOfContact;
+    private double eventCost;
+    private int totalParticipants;
+    private int totalEventDays;
+    private boolean breakfastRequired;
     private double breakfastCost;
-    @SuppressWarnings("unused")
     private boolean lunchRequired;
     private double lunchCost;
-    @SuppressWarnings("unused")
     private boolean dinnerRequired;
     private double dinnerCost;
-    private double conferenceEventCost;
+    private CalculateEventCostClass calculateEventCostObject=new CalculateEventCostClass();
 
-    public double getBreakfastCost(){
-        return breakfastCost;
-    }
 
-    public void setBreakfastCost(double breakfastCost){
+    public ConferenceEvent(String eventID, String eventName, String eventLocation, String eventPointOfContact, double eventCost, int totalParticipants, int totalEventDays,boolean breakfastRequired, double breakfastCost, boolean lunchRequired, double lunchCost, boolean dinnerRequired, double dinnerCost) {
+        this.eventID = eventID;
+        this.eventName = eventName;
+        this.eventLocation = eventLocation;
+        this.eventPointOfContact = eventPointOfContact;
+        this.eventCost = eventCost;
+        this.totalParticipants = totalParticipants;
+        this.totalEventDays = totalEventDays;
+        this.breakfastRequired = breakfastRequired;
         this.breakfastCost = breakfastCost;
-    }
-
-    public double getLunchCost(){
-        return lunchCost;
-    }
-
-    public void setLunchCost(double lunchCost){
+        this.lunchRequired = lunchRequired;
         this.lunchCost = lunchCost;
-    }
-
-    public double getDinnerCost(){
-        return dinnerCost;
-    }
-
-    public ConferenceEvent(String eventID, String eventName, String eventLocation, String pointOfContact, int totalParticipants, int totalEventDays, 
-    double breakfastCost, double lunchCost, double dinnerCost){
-        super(eventID, eventName, eventLocation, pointOfContact, totalParticipants, totalEventDays);
-        this.breakfastCost = breakfastCost;
-        this.lunchCost = lunchCost;
+        this.dinnerRequired = dinnerRequired;
         this.dinnerCost = dinnerCost;
     }
 
-
-    @Override
-    public void calculateEventCost(){
-        super.calculateEventCost();
-        conferenceEventCost = getEventCost() + ((breakfastCost + lunchCost + dinnerCost) * getTotalParticipants() * getTotalEventDays());
+    public double calculateEventCost(){
+         return  eventCost = calculateEventCostObject.calculateEventCost() + (calculateEventCostObject.calculateEventCost() * 0.3);
     }
-
-
-    @Override
-    public String toString(){
-        return "Conference Event details: " + "\n" +
-        "Event ID: " + getEventCost() + "\n" +
-        "Event Name: " + getEventCost() + "\n" +
-        "Event Location: " + getEventLocation() + "\n" +
-        "Total participants: " + getTotalParticipants() + "\n" +
-        "Total Conference Cost: " + conferenceEventCost;
+    public String toString() {
+        return "Conference Event details:"+'\n'+
+                "Event ID: "+ eventID +'\n'+
+                "Event Name: "+eventName+'\n'+
+                "Event Location: "+eventLocation+'\n'+
+                "Total Participants: "+totalParticipants+'\n'+
+                "Total Event Cost:"+eventCost+'\n';
     }
-
-    private String getTotalParticipants() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'getTotalParticipants'");
-    } 
-        
 }
-
-    
