@@ -2,11 +2,16 @@ public class MusicConcertEvent{
     private String eventID;
     private String eventName;
     private String eventLocation;
+    @SuppressWarnings("unused")
     private String eventPointOfContact;
+    @SuppressWarnings("unused")
     private double eventCost;
     private int totalParticipants;
+    @SuppressWarnings("unused")
     private int totalEventDays;
+    @SuppressWarnings("unused")
     private boolean merchandiseRequired;
+    @SuppressWarnings("unused")
     private double merchandiseCost;
     private CalculateEventCostClass calculateEventCostObject=new CalculateEventCostClass();
 
